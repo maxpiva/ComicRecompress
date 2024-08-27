@@ -85,7 +85,7 @@ Most of the time you can convert the pytorch model to ONNX or to NCNN using chai
 
 If you plan to use your computer, at the same time, its usefull to limit the VRAM use by chaiNNer, run Chainner, go to Settings and adjust. Also enable any cache. As rule of thumb, try to reduce the tile size of the upscalers to the minimun, so the VRAM usage will be less. 
 
-Additional models to expermiment can be downloaded from here: https://openmodeldb.info/ experiment!
+Additional models to experiment can be downloaded from here: https://openmodeldb.info/ 
 
 ## Usage
 
