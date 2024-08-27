@@ -93,7 +93,7 @@ Destination directory will recreate the directory structure of the input directo
 Output format will be cbz files without compression.
 
 ```console
-C:\Sources\Repos\ComicRecompress\bin\Release\net8.0\publish\win-x64>ComicRecompress.exe --help
+ComicRecompress.exe --help
 ComicRecompress 1.0.0
 Copyright (C) 2024 ComicRecompress
 
@@ -124,9 +124,3 @@ Copyright (C) 2024 ComicRecompress
 ```
 ### Tidbits
 *  tasksRestartBackend, is used to restart the backend after processing #N archives, VRAM gets fragmented, and get leaks, so restarting the backend ensures, good VRAM behavior.
-
-
-
-
-
-
