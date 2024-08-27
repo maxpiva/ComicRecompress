@@ -39,7 +39,7 @@ _This mode is useful when the original files do not have artifacts, and you want
 
 * Windows... Currently (Linux/Mac can be supported in the future, there is no limitation, only testing, and spawn execution of the tools,  will accept PRs)
 * ChaiNNer - Download it from https://github.com/chaiNNer-org/chaiNNer/releases
-* JPEG-XL - cjxl.exe (JPEG Compressor) from https://github.com/libjxl/libjxl/releases
+* JPEG-XL - cjxl.exe (JPEG-XL Compressor) from https://github.com/libjxl/libjxl/releases
 
 ## Almost Required:
 
