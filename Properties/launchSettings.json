@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ComicRecompress": {
+      "commandName": "Project",
+      "commandLineArgs": "-i C:\\testin -o C:\\testout"
+    }
+  }
+}
