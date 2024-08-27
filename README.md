@@ -1,7 +1,7 @@
 # ComicRecompress
 ComicRecompress marries two state of the art technologies: neural network image processing and JPEG-XL
 
-Clean and/or recompress your comics/manga/manhwas. Removing artifacts, and reducing the overall space used.
+Clean and/or recompress your comics/mangas/manhwas. Removing artifacts, and reducing the overall space used.
 
 ## Supported Modes
 
