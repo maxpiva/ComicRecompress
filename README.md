@@ -78,7 +78,7 @@ _Since the program can take any chainner save file as a parameter you're open to
 
 The current chainner file was an experimentation by me, looking for a good compromise in artifact removal without texture crushing. But new models are created every day, and other can come with better chainner files.
 
-I found onnx models seems to be faster that pytorch and NCNN models. (In my machine).
+I found onnx models seems to be faster than pytorch and NCNN models. (RTX 4070).
 
 Most of the time you can convert the pytorch model to ONNX or to NCNN using chainner. Follow chaiNNer guides.
 
