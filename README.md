@@ -22,7 +22,7 @@ Uses: JPEG-XL
 
 * Recompress existing JPGs to JPEG-XL obtaining 5-30% reduction in size using JPEG-XL VarDCT mode. JPEG XL can losslessly recompress existing JPEG files and go back.
 
-_This mode is great if you don't want to touch the original files, but you want extra storage compression. Reducing the overall size of the archive, without any visual modification. And you can always go back to original jpeg back._
+_This mode is great if you don't want to touch the original files, but you want extra storage compression. Reducing the overall size of the archive, without any visual modification. And you can always go back to the original jpeg back._
 
 ### Modular Mode
 
