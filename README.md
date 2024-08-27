@@ -60,7 +60,7 @@ ComicCompress uses chaiNNer backend only, so you cannot run comicCompress and ch
 ## Tweaking
 
 The Included chainner files, can be tweaked in chaiNNer and new chainner files can be created, or it can be used as an example to create your own.
-There is three variation of the same chain, one tailored for pytorch, other for onnx and the last one for ncnn models.
+There is three variations of the same chain, one tailored for **pytorch**, other for **onnx** and the last one for **ncnn** models.
 
 IE: **default-onnx.chn**
 Currently the chain  does the following:
