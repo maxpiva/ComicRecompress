@@ -11,7 +11,7 @@ Type of images: Images with JPEG Compression, Halo and other Artifacts, Low reso
 
 Uses: chaiNNer + Jpeg-XL 
 
-*  Using neural network models to remove image compression artifacts, or state of the AI scaling algorithms, for low resolution images. You can feed you own chaiNNer chain files.
+*  Using neural network models to remove image compression artifacts, or state of the AI scaling algorithms, for low resolution images. You can feed you own chaiNNer chain files and experiment.
 *  Using JPEG-XL modular mode which extremely compress the artifact free result, into something that most of the time, its smaller that the original source file, and remains with visual free artifacts.
 
 ### Reconstruct Mode
