@@ -98,7 +98,6 @@ Output format will be cbz files without compression.
 ```console
 ComicRecompress.exe --help
 ComicRecompress 1.0.0
-Copyright (C) 2024 ComicRecompress
 
   -i, --input                  Required. Input File or Directory
 
