@@ -7,7 +7,7 @@ Clean and/or recompress your comics/manga/manhwas. Removing artifacts, and reduc
 
 ### Chainner Mode
 
-Type of images: Comics with JPEG Compression, Halo and other Artifacts.
+Type of images: Images with JPEG Compression, Halo and other Artifacts.
 
 Uses: chaiNNer + Jpeg-XL 
 
