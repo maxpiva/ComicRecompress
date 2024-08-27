@@ -89,8 +89,10 @@ Additional models to expermiment can be downloaded from here: https://openmodeld
 
 ## Usage
 
-Supports rar and zip archives containing images, .rar, .zip, .7z, .cbr, .cbz. .cb7
-Destination directory will recreate the directory structure of the input directory, comiocompress will scan for archives recursively. any non images files in archives will be copied to the destination archives.
+Supports rar, zip and 7zip archives containing images: .rar, .zip, .7z, .cbr, .cbz. .cb7.
+
+Destination directory will recreate the directory structure of the input directory, ComicRecompress will scan for archives recursively. any non images files found in the archives will be copied to the destination archives without processing.
+
 Output format will be cbz files without compression.
 
 ```console
