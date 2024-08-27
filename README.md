@@ -30,7 +30,7 @@ Types of images: High Quality JPEG or PNG without artifacts.
 
 Uses: JPEG-XL
 
-* Recompress existing PNG LossLess or Almost Lossless Jpeg into JPEG-XL Modular model (Cannot go back to the original JPEG), reducing the size, without any visible loss.
+* Recompress existing PNG LossLess or Almost Lossless JPEG into JPEG-XL Modular model (Cannot go back to the original JPEG), reducing the size, without any visible loss.
 
 _This mode is useful when the original files do not have artifacts, and you want to reduce archive size dramatically without visible loss._
 
@@ -47,9 +47,9 @@ Nvidia Video Card (chaiNNer works in CPU mode albeit slow, and NCNN models work 
 
 ## Windows Installation
 
-1) Download JPEG-XL, make sure cjxl.exe is in the same directory as ComicRecompress. (cjxl.exe is in JPEG-XL bin directory)
-2) Install Chainer.
-3) Run Chainner, and install all chainner requirements including integrated Python, PyTorch, Onnx and NCNN. All requirements need to be installed before running this.
+1) Download JPEG-XL, make sure cjxl.exe is in the same directory as ComicRecompress. 
+2) Install chaiNNer.
+3) Run chaiNNer, and install all chainner requirements including integrated Python, PyTorch, Onnx and NCNN. All requirements need to be installed before running this.
 4) Adjust Setting according, read below.
 4) Quit chainner.
 
@@ -74,17 +74,18 @@ Currently the chain  does the following:
 7) Save as 48 bit png.
 ![image](https://github.com/user-attachments/assets/dd995e58-0dcb-4f91-bbae-e14ff1f99923)
 
-_Since the program can take any chainner save file as a parameter you're open to experiment. If you create something usefull, please do not hesitate to do a pull request._
+_Since the program can take any chaiNNer save file as a parameter you're open to experiment. If you create something usefull, please do not hesitate to do a pull request._
 
-The current chainner file was an experimentation by me, looking for a good compromise in artifact removal without texture crushing. But new models are created every day, and other can come with better chainner files.
+The current chainner file was an experimentation by me, looking for a good compromise in artifact removal without texture crushing. 
+But new models are created every day, and other can come with better chaiNNer files.
 
-I found onnx models seems to be faster than pytorch and NCNN models. (RTX 4070).
+I found onnx models seems to be faster than pytorch and ncnn models. (RTX 4070) But it could be totally related to the models used.
 
-Most of the time you can convert the pytorch model to ONNX or to NCNN using chainner. Follow chaiNNer guides.
+Most of the time you can convert the pytorch model to ONNX or to NCNN using chaiNNer. Follow chaiNNer guides, its really easy.
 
-If you plan to use your computer, at the same time, its usefull to limit the VRAM use by Chainner, run Chainner, go to Settings and adjust. Also enable any cache. As rule of thumb, try to reduce the tile size of the upscalers to the minimun, so the VRAM usage will be less. 
+If you plan to use your computer, at the same time, its usefull to limit the VRAM use by chaiNNer, run Chainner, go to Settings and adjust. Also enable any cache. As rule of thumb, try to reduce the tile size of the upscalers to the minimun, so the VRAM usage will be less. 
 
-Additional models to expermiment can be downloaded from here: https://openmodeldb.info/ so, you can experiment free.
+Additional models to expermiment can be downloaded from here: https://openmodeldb.info/ experiment!
 
 ## Usage
 
