@@ -12,7 +12,7 @@ Type of images: Images with JPEG Compression, Halo and other Artifacts, Low reso
 Uses: chaiNNer + Jpeg-XL 
 
 *  Using neural network models to remove image compression artifacts, or state of the AI scaling algorithms, for low resolution images. You can feed you own chaiNNer chain files and experiment.
-*  Using JPEG-XL modular mode which extremely compress the artifact free result, into something that most of the time, its smaller that the original source file, and remains with visual free artifacts.
+*  Using JPEG-XL modular mode which extremely compress the artifact free result, into something that most of the time, its smaller that the original source file, but without visual artifacts.
 
 ### Reconstruct Mode
 
@@ -77,7 +77,7 @@ Currently the chain  does the following:
 _Since the program can take any chaiNNer save file as a parameter you're open to experiment. If you create something usefull, please do not hesitate to do a pull request._
 
 The current chainner file was an experimentation by me, looking for a good compromise in artifact removal without texture crushing. 
-But new models are created every day, and other can come with better chaiNNer files.
+But new models are created every day, and others can come with better chaiNNer files.
 
 I found onnx models seems to be faster than pytorch and ncnn models. (RTX 4070) But it could be totally related to the models used.
 
