@@ -101,7 +101,7 @@ namespace ComicRecompress
                 return;
             }
             Mode mode = Mode.Chainner;
-            Enum.TryParse<Mode>(opts.Input, out mode);
+            Enum.TryParse<Mode>(opts.Mode, true, out mode);
             if (mode == Mode.Chainner)
             {
                 Services.Chainner chainner = new Services.Chainner(new BaseJob(Color.Magenta));

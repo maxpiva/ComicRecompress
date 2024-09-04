@@ -45,13 +45,15 @@ namespace ComicRecompress.Services
                 PipeTarget target = PipeTarget.ToDelegate(_job.WriteLine);
                 int modular = 1;
                 int lossjpeg = 0;
+                int quality = state.JPEGXLQuality;
                 if (input.EndsWith(".jpg") && state.Mode == Mode.Reconstruct)
                 {
                     modular = 0;
                     lossjpeg = 1;
+                    quality = 100;
                 }
 
-                var cmd = Cli.Wrap(Exe).WithArguments($"-q {state.JPEGXLQuality} -j {lossjpeg} -e 10 -m {modular} --brotli_effort 11 \"{input}\" \"{output}\"")
+                var cmd = Cli.Wrap(Exe).WithArguments($"-q {quality} -j {lossjpeg} -e 10 -m {modular} --brotli_effort 11 \"{input}\" \"{output}\"")
                     .WithStandardOutputPipe(target).WithStandardErrorPipe(target);
                 var result = await cmd.ExecuteAsync().ConfigureAwait(false);
                 if (result.IsSuccess)

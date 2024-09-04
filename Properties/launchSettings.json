@@ -2,7 +2,7 @@
   "profiles": {
     "ComicRecompress": {
       "commandName": "Project",
-      "commandLineArgs": "-i C:\\testin -o C:\\testout"
+      "commandLineArgs": "-i c:\\testin -o c:\\testout --mode modular"
     }
   }
 }

@@ -21,13 +21,21 @@ namespace ComicRecompress.Jobs
             jpeg =new JpegXL(this);
         }
 
+        private string[] image_extensions = new[] { ".jpg", ".png", ".gif", ".avif", ".apng", ".jxl",".webp" };
+
+        private bool IsImage(string file)
+        {
+            return image_extensions.Contains(Path.GetExtension(file).ToLowerInvariant());
+        }
+
         public async Task Execute(IJobExecutionContext context)
         {
             ExecutionState state = context.GetState();
             Init($"Converting to JPG XL {state.ProcessState.SourceFile}");
             ExecutionState newState = state.NewContext<JPegXLJob>();
             bool breaking=false;
-            await Parallel.ForEachAsync<string>(Directory.GetFiles(state.InputPath, "*.png", SearchOption.AllDirectories), new ParallelOptions { MaxDegreeOfParallelism = 4 }, 
+            List<string> files = Directory.GetFiles(state.InputPath, "*", SearchOption.AllDirectories).Where(a=>IsImage(a)).ToList();
+            await Parallel.ForEachAsync<string>(files, new ParallelOptions { MaxDegreeOfParallelism = 4 }, 
                 async (file, token) =>
             {
                 if (breaking)
