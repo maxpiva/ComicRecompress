@@ -20,7 +20,7 @@ Type of images: JPEG Images, recompress existing archive into smaller size, with
 
 Uses: JPEG-XL
 
-* Recompress existing JPGs to JPEG-XL obtaining 5-30% reduction in size using JPEG-XL VarDCT mode. JPEG XL can losslessly recompress existing JPEG files and go back.
+* Recompress existing JPGs to JPEG-XL obtaining 5-30% reduction in size using JPEG-XL VarDCT mode. JPEG XL can lossless recompress existing JPEG files and go back.
 
 _This mode is great if you don't want to touch the original files, but you want extra storage compression. Reducing the overall size of the archive, without any visual modification. And you can always go back to the exact original jpeg back. Please take note, that if the original JPEG has artifacts, the recompressed JPEG-XL will have exact the same ones. There will be no visual difference between the two_
 
