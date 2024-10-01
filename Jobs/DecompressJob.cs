@@ -24,7 +24,7 @@ namespace ComicRecompress.Jobs
             ExecutionState state = context.GetState();
             Init($"Decompressing {Path.GetFileName(state.ProcessState.SourceFile)}");
             ExecutionState newState = state.NewContext<DecompressJob>();
-            bool res=compression.Decompress(newState.InputPath, state.ProcessState.SourceFile);
+            bool res=compression.Decompress(newState.InputPath, state.ProcessState.SourceFile, state.ProcessState.FlatDirectories);
             if (res)
             {
                 if (state.ProcessState.WebComicMaxJoinSize > 0)

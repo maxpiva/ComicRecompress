@@ -61,13 +61,16 @@ namespace ComicRecompress
                 HelpText = "Number of tasks before restarting the backend [0 = Never]", Default = 5)]
             public int RestartTasks { get; set; }
 
+            [Option('f', "flat", Required = false, HelpText = "Flatten Directories inside the archives (removing paths)", Default = false)]
+            public bool FlatDirectories { get; set; }
+
         }
 
 
         private static string defaultChn = "default-onnx.chn";
 
         public static object _lck = new object();
-        public static BackendManager Backend { get; set; }
+        public static BackendManager? Backend { get; set; }
 
         public static int Port { get; } = 8000;
 
@@ -79,6 +82,18 @@ namespace ComicRecompress
         {
 
             await Parser.Default.ParseArguments<Options>(args).WithNotParsed(HandleParseError).WithParsedAsync(RunOptions).ConfigureAwait(false);
+        }
+        static string[] ArchiveExtensions = new[] { ".zip", ".rar", ".7z", ".cbz", ".cbr", ".cb7" };
+        static List<string> FilterFiles(IEnumerable<string> files)
+        {
+            List<string> res = new List<string>();
+            foreach (string file in files)
+            {
+                if (ArchiveExtensions.Contains(Path.GetExtension(file).ToLower()))
+                    res.Add(file);
+            }
+
+            return res;
         }
 
         static async Task RunOptions(Options opts)
@@ -130,15 +145,16 @@ namespace ComicRecompress
             {
                 scheduler.Context["cnt"] = 0;
                 scheduler.Context["ErrorFiles"] = new List<string>();
-                string[] files = null;
+                List<string> files = new List<string>();
                 bool fileMode = false;
                 if (File.Exists(opts.Input))
                 {
-                    files = new[] { opts.Input };
+                    files.Add(opts.Input);
                     fileMode = true;
                 }
                 else
-                    files = Directory.GetFiles(opts.Input, "*", SearchOption.AllDirectories);
+                    files = Directory.GetFiles(opts.Input, "*", SearchOption.AllDirectories).ToList();
+                files = FilterFiles(files);
                 ChainnerRespawnCount = opts.RestartTasks;
                 foreach (string file in files.OrderBy(a => a))
                 {
@@ -153,6 +169,7 @@ namespace ComicRecompress
                     state.DestinationFile = dest;
                     state.SourceFile = file;
                     state.WebComicMaxJoinSize = opts.WebComicMaxHeight;
+                    state.FlatDirectories = opts.FlatDirectories;
                     state.JPEGXLQuality = opts.Quality;
                     state.JPEGXLThreads = opts.JPEGThreads;
                     lock (_lck)
@@ -191,7 +208,8 @@ namespace ComicRecompress
             {
                 Console.WriteLine(e);
             }
-            await Backend.StopAsync().ConfigureAwait(false);
+            if (Backend!=null)
+                await Backend.StopAsync().ConfigureAwait(false);
         }
 
 

@@ -70,20 +70,39 @@ namespace ComicRecompress.Services
             return true;
         }
 
-        public bool Decompress(string directory, string file)
+        public bool Decompress(string directory, string file, bool flatten)
         {
             try
             {
                 using (var archive = ArchiveFactory.Open(file))
                 {
-                    foreach (var entry in archive.Entries)
+                    if (flatten)
+                    {
+                        HashSet<string> existings = new HashSet<string>();
+                        foreach(var entry in archive.Entries.Where(a=>!a.IsDirectory))
+                        {
+                            string? fileName = entry.Key;
+                            if (entry.Key != null)
+                            {
+                                string filename = Path.GetFileName(entry.Key);
+                                if (existings.Contains(filename))
+                                {
+                                    _job.WriteError($"WARNING:Unable to flat archive, the following filename exists at least two times '{filename}'.");
+                                    flatten = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    foreach (var entry in archive.Entries.Where(a=>!a.IsDirectory))
                     {
                         if (!entry.IsDirectory)
                         {
                             _job.WriteLine($"Decompressing {entry.Key}");
                             entry.WriteToDirectory(directory, new ExtractionOptions()
                             {
-                                ExtractFullPath = true,
+                                ExtractFullPath = !flatten,
                                 Overwrite = true
                             });
                         }

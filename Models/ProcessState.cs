@@ -11,4 +11,5 @@ public class ProcessState
     public int JPEGXLThreads { get; set; }
     public int JPEGXLQuality { get; set; }
     public Mode Mode { get; set; }
+    public bool FlatDirectories { get; set; }
 }

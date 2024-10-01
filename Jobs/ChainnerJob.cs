@@ -35,8 +35,8 @@ namespace ComicRecompress.Jobs
                 if (VerifyFiles(state.InputPath, newState.InputPath))
                 {
                     await context.Scheduler.ScheduleJob<JPegXLJob>(newState, 7, true).ConfigureAwait(false);
-                    End();
                     await Program.MayRespawn().ConfigureAwait(false);
+                    End();
                     return;
                 }
             }
