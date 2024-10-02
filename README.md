@@ -120,9 +120,12 @@ ComicRecompress 1.0.0
 
   -k, --tasksRestartBackend    (Default: 5) Number of tasks before restarting the backend [0 = Never]
 
+  -f, --flat                   (Default: false) Flatten Directories inside the archives (removing paths)
+
   --help                       Display this help screen.
 
   --version                    Display version information.
+
 ```
 ### Tidbits
 *  tasksRestartBackend, is used to restart the backend after processing #N archives, VRAM gets fragmented, and get leaks, so restarting the backend ensures, good VRAM behavior.
